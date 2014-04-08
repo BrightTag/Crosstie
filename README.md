@@ -1,7 +1,7 @@
 BrightTag Crosstie
 ==================
 
-The Crosstie Content and Utility functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. 
+The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, types and extend.
 
 Content Functions
 -----------------
@@ -128,3 +128,9 @@ BrightTag.Util.<BTFunction>
 
 
 ### <a name="types"></a>Types
+#### Description
+
+#### Examples
+```sh
+<script type="text/javascript">
+</script>
