@@ -47,6 +47,8 @@ Creates an &lt;iframe&gt; element with the supplied uri.
         other: ''
       }), {display: 'none'});
 </script>
+
+// <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&amp;tagId=1234" style="display: none;"></iframe>
 ```
 
 
@@ -63,6 +65,8 @@ Creates an &lt;img /&gt; element with the supplied uri.
         pixelId: '1234'
       }));
 </script>
+
+// <img height="1px" width="1px" src="http://pixel.vendy-corp.com/path/?clientId=abcd&pixelId=1234">
 ```
 
 
@@ -74,6 +78,8 @@ Creates an &lt;script&gt; element with the supplied uri.
 <script type="text/javascript">
   BrightTag.Content.script("//script.vendy-corp.com/path/?clientId=abcd");
 </script>
+
+// <script type="text/javascript" src="//script.vendy-corp.com/path/?clientId=abcd"></script>
 ```
 
 
