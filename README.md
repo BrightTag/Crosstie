@@ -1,7 +1,9 @@
 BrightTag Crosstie
 ==================
 
-The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, types and extend.
+The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. 
+
+The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, types and extend.
 
 Content Functions
 -----------------
@@ -12,7 +14,6 @@ BrightTag.Content.<BTFunction>
   - [HTTP](#http)
   - [Iframe](#iframe)
   - [Image](#image)
-  - [Link](#link)
   - [Script](#script)
 
 ### <a name="http"></a>HTTP
@@ -21,45 +22,57 @@ BrightTag.Content.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
+  BrightTag.HTTP.URL("//frame.vendy-corp.com/path/");
 </script>
 ```
 
+```sh
+<script type="text/javascript">
+  BrightTag.HTTP.Cookie("//frame.vendy-corp.com/path/");
+</script>
+```
+
+
 ### <a name="iframe"></a>Iframe
 #### Description
-
+Creates an &lt;iframe&gt; element with the supplied uri.
 #### Examples
 ```sh
 <script type="text/javascript">
+  BrightTag.Content.iframe(
+    BrightTag.HTTP.URL("//frame.vendy-corp.com/path/")
+      .appendParams({
+        clientId: 'abcd',
+        tagId: '1234',
+        other: ''
+      }), {display: 'none'});
 </script>
 ```
 
 
 ### <a name="image"></a>Image
 #### Description
-
+Creates an &lt;img /&gt; element with the supplied uri.
 #### Examples
 ```sh
 <script type="text/javascript">
-</script>
-```
-
-
-### <a name="link"></a>Link
-#### Description
-
-#### Examples
-```sh
-<script type="text/javascript">
+  BrightTag.Content.image(
+    BrightTag.HTTP.URL("//pixel.vendy-corp.com/path/")
+      .appendParams({
+        clientId: 'abcd',
+        pixelId: '1234'
+      }));
 </script>
 ```
 
 
 ### <a name="script"></a>Script
 #### Description
-
+Creates an &lt;script&gt; element with the supplied uri.
 #### Examples
 ```sh
 <script type="text/javascript">
+  BrightTag.Content.script("//script.vendy-corp.com/path/?clientId=abcd");
 </script>
 ```
 
@@ -123,7 +136,13 @@ BrightTag.Util.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
+  var category = BrightTag.Util.map("products, supplies, resources".split(/\s*,\s*/), 
+    function (value) {
+      return '"' + value + '"';
+    }).join();
 </script>
+
+// "products","supplies","resources"
 ```
 
 
