@@ -9,11 +9,13 @@ Content Functions
 BrightTag.Content.<BTFunction>
 ```
 
-  - HTTP
+  - [HTTP](#http)
   - Iframe
   - Image
   - Link
   - Script
+
+### <a name="http"></a>HTTP
 
 Utility Functions
 -----------------
@@ -27,3 +29,4 @@ BrightTag.Util.<BTFunction>
   - Filter
   - Map
   - Types
+
