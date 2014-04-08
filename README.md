@@ -5,7 +5,9 @@ The Crosstie Content and Utility functions are designed to help make delivering 
 
 Content Functions
 -----------------
-'''BrightTag.Content.<BTFunction>'''
+'''sh
+BrightTag.Content.<BTFunction>
+'''
 
   - HTTP
   - Iframe
@@ -15,7 +17,9 @@ Content Functions
 
 Utility Functions
 -----------------
-'''BrightTag.Util.<BTFunction>'''
+'''sh
+BrightTag.Util.<BTFunction>
+'''
 
   - Contains
   - Each
