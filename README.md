@@ -3,7 +3,9 @@ BrightTag Crosstie
 
 The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
-The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, types and extend.
+The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, and extend.
+
+Also, included as part of the Crosstie library are the [BrightTag.Types](#types) and [BrightTag.trim](#trim) functions.
 
 Content Functions
 -----------------
@@ -94,7 +96,6 @@ BrightTag.Util.<BTFunction>
   - [Extend](#extend)
   - [Filter](#filter)
   - [Map](#map)
-  - [Types](#types)
 
 ### <a name="contains"></a>Contains
 #### Description
@@ -152,10 +153,38 @@ BrightTag.Util.<BTFunction>
 ```
 
 
-### <a name="types"></a>Types
+Other Functions
+---------------
+### <a name="trim"></a>BrightTag.trim
 #### Description
 
 #### Examples
 ```sh
 <script type="text/javascript">
+  BrightTag.trim(" stringWithSpacesOrLineBreaks ");
 </script>
+
+// "stringWithSpacesOrLineBreaks"
+```
+
+
+  - [trim](#trim)
+  - [Types](#types)
+
+### <a name="types"></a>BrightTag.Types
+#### Description
+  - isArray
+  - isBoolean
+  - isFunction
+  - isNumber
+  - isObject
+  - isPrototypeOf
+  - isString
+#### Examples
+```sh
+<script type="text/javascript">
+  BrightTag.Types.isArray([])
+</script>
+
+// true
+```
