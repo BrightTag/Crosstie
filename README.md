@@ -22,7 +22,7 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="iframe"></a>Iframe
 #### Description
-`BrightTag.Content.iframe` creates an &lt;iframe&gt; element with the supplied uri.
+`BrightTag.Content.iframe()` creates an &lt;iframe&gt; element with the supplied uri.
 
 #### Examples
 ```sh
@@ -41,7 +41,7 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="image"></a>Image
 #### Description
-`BrightTag.Content.image` creates an &lt;img /&gt; element with the supplied uri.
+`BrightTag.Content.image()` creates an &lt;img /&gt; element with the supplied uri.
 
 #### Examples
 ```sh
@@ -59,7 +59,7 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="script"></a>Script
 #### Description
-`BrightTag.Content.script` creates an &lt;script&gt; element with the supplied uri.
+`BrightTag.Content.script()` creates an &lt;script&gt; element with the supplied uri.
 
 #### Examples
 ```sh
@@ -146,6 +146,15 @@ BrightTag.Util.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
+  var array = [12, 5, 8, 130, 44];
+
+  function moreThanTen(x) {
+    return x > 10;
+  }
+
+  BrightTag.Util.filter(array, moreThanTen);
+
+// [12, 130, 44]
 </script>
 ```
 
@@ -174,6 +183,7 @@ Other Functions
 
 ### <a name="http"></a>HTTP
 #### Description
+`BrightTag.HTTP.URL()` and `BrightTag.HTTP.Cookie` allow you to easily create URLS and Cookies that use the appropriate protocol and load conventions.
 
 #### Examples
 ```sh
@@ -190,7 +200,7 @@ Other Functions
 
 ### <a name="trim"></a>BrightTag.trim
 #### Description
-`BrightTag.trim` removes whitespace from both sides of a string, as well as, line breaks.
+`BrightTag.trim()` removes whitespace from both sides of a string, as well as, line breaks.
 
 #### Examples
 ```sh
@@ -203,7 +213,7 @@ Other Functions
 
 ### <a name="types"></a>BrightTag.Types
 #### Description
-`BrightTag.Types` function returns a Boolean value that indicates whether a specified variable is any of the following:
+`BrightTag.Types.<isType>()` function returns a Boolean value that indicates whether a specified variable is any of the following:
 
   - isArray
   - isBoolean
