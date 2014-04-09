@@ -4,9 +4,9 @@ Crosstie is a Javascript API that leverages helper functions found in BrightTag'
 
 The Crosstie [Content](#content-functions) functions are designed to help make delivering content like `<script>`, `<img/>`, and `<iframe>` tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
-The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, and extend.
+The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, trim, and extend.
 
-Also, included as part of the Crosstie library are the [BrightTag.HTTP](#http), [BrightTag.Types](#types) and [BrightTag.trim](#trim) functions.
+Also, included as part of the Crosstie library are the [BrightTag.HTTP](#http) and [BrightTag.Types](#types)functions.
 
 Be sure to take a look at the [Cookbook](#cookbook) for various recipies to common tag formats. 
 
@@ -20,7 +20,7 @@ BrightTag.Content.<BTFunction>
   - [Image](#image)
   - [Script](#script)
 
-### <a name="iframe"></a>Iframe
+### <a name="iframe"></a>iframe
 #### Description
 `BrightTag.Content.iframe()` creates an &lt;iframe&gt; element with the supplied uri.
 
@@ -39,7 +39,7 @@ BrightTag.Content.<BTFunction>
 // <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&amp;tagId=1234" style="display: none;"></iframe>
 ```
 
-### <a name="image"></a>Image
+### <a name="image"></a>image
 #### Description
 `BrightTag.Content.image()` creates an &lt;img /&gt; element with the supplied uri.
 
@@ -57,7 +57,7 @@ BrightTag.Content.<BTFunction>
 // <img height="1px" width="1px" src="http://pixel.vendy-corp.com/path/?clientId=abcd&pixelId=1234">
 ```
 
-### <a name="script"></a>Script
+### <a name="script"></a>script
 #### Description
 `BrightTag.Content.script()` creates an &lt;script&gt; element with the supplied uri.
 
@@ -81,8 +81,9 @@ BrightTag.Util.<BTFunction>
   - [Extend](#extend)
   - [Filter](#filter)
   - [Map](#map)
+  - [trim](#trim)
 
-### <a name="contains"></a>Contains
+### <a name="contains"></a>contains
 #### Description
 `BrightTag.Util.contains` returns a Boolean value if a matching string is within another array.
 
@@ -97,7 +98,7 @@ BrightTag.Util.<BTFunction>
 // true
 ```
 
-### <a name="each"></a>Each
+### <a name="each"></a>each
 #### Description
 `BrightTag.Util.each` performs a provided function once for every array element.
 
@@ -116,7 +117,7 @@ BrightTag.Util.<BTFunction>
 // three
 ```
 
-### <a name="extend"></a>Extend
+### <a name="extend"></a>extend
 #### Description
 `BrightTag.Util.extend` merges the contents of two or more objects into the first object.
 
@@ -139,7 +140,7 @@ BrightTag.Util.<BTFunction>
 // {dog: 0, pony: {"height":200}, cat: 97, zebra: 100
 ```
 
-### <a name="filter"></a>Filter
+### <a name="filter"></a>filter
 #### Description
 `BrightTag.Util.filter` creates a new array with all elements that pass the test implemented by the provided function.
 
@@ -158,7 +159,7 @@ BrightTag.Util.<BTFunction>
 </script>
 ```
 
-### <a name="map"></a>Map
+### <a name="map"></a>map
 #### Description
 `BrightTag.Util.map` method creates a new array with the results of calling a provided function on every element in this array.
 
@@ -174,11 +175,23 @@ BrightTag.Util.<BTFunction>
 // "products","supplies","resources"
 ```
 
+### <a name="trim"></a>trim
+#### Description
+`BrightTag.trim()` removes whitespace from both sides of a string, as well as, line breaks.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  BrightTag.trim(" stringWithSpacesOrLineBreaks ");
+</script>
+
+// "stringWithSpacesOrLineBreaks"
+```
+
 Other Functions
 ---------------
 
   - [HTTP](#http)
-  - [trim](#trim)
   - [Types](#types)
 
 ### <a name="http"></a>HTTP
@@ -196,19 +209,6 @@ Other Functions
 <script type="text/javascript">
   BrightTag.HTTP.Cookie("//frame.vendy-corp.com/path/");
 </script>
-```
-
-### <a name="trim"></a>BrightTag.trim
-#### Description
-`BrightTag.trim()` removes whitespace from both sides of a string, as well as, line breaks.
-
-#### Examples
-```sh
-<script type="text/javascript">
-  BrightTag.trim(" stringWithSpacesOrLineBreaks ");
-</script>
-
-// "stringWithSpacesOrLineBreaks"
 ```
 
 ### <a name="types"></a>BrightTag.Types
@@ -235,7 +235,6 @@ Other Functions
 Cookbook
 ---------
 ### <a name="cookbook"></a>
-#### Cookbook
 
 Simple Image (1x1.gif) Tag:
 ```sh
