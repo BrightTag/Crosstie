@@ -219,3 +219,20 @@ Other Functions
 
 // true
 ```
+
+Cookbook
+---------
+### <a name="cookbook"></a>
+#### Cookbook
+
+Simple Image (1x1.gif) Tag:
+```sh
+<script type="text/javascript">
+BrightTag.Content.image(new BrightTag.HTTP.URL('//dataendpoint.com/push_sync/1x1.gif')
+	.appendParam({
+		clientId: 'foo',
+		pixelId: '1234'
+	})));
+</script>
+
+```
