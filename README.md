@@ -8,6 +8,8 @@ The [Utility](#utility-functions) functions are optimized Javascript functions i
 
 Also, included as part of the Crosstie library are the [BrightTag.HTTP](#http), [BrightTag.Types](#types) and [BrightTag.trim](#trim) functions.
 
+Be sure to take a look at the [Cookbook](#cookbook) for various recipies to common tag formats. 
+
 Content Functions
 -----------------
 ```sh
