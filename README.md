@@ -180,6 +180,7 @@ Other Functions
   - isObject
   - isPrototypeOf
   - isString
+
 #### Examples
 ```sh
 <script type="text/javascript">
