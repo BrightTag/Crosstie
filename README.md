@@ -155,8 +155,13 @@ BrightTag.Util.<BTFunction>
 
 Other Functions
 ---------------
+
+  - [trim](#trim)
+  - [Types](#types)
+
 ### <a name="trim"></a>BrightTag.trim
 #### Description
+BrightTag.trim removes whitespace from both sides of a string, as well as, line breaks.
 
 #### Examples
 ```sh
@@ -167,12 +172,10 @@ Other Functions
 // "stringWithSpacesOrLineBreaks"
 ```
 
-
-  - [trim](#trim)
-  - [Types](#types)
-
 ### <a name="types"></a>BrightTag.Types
 #### Description
+The Types function returns a Boolean value that indicates whether a specified variable is any of the following:
+
   - isArray
   - isBoolean
   - isFunction
