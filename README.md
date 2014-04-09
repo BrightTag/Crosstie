@@ -234,7 +234,7 @@ BrightTag.Content.image(new BrightTag.HTTP.URL('//dataendpoint.com/push_sync/1x1
 	.appendParam({
 		clientId: 'foo',
 		pixelId: '1234'
-	})));
+	}));
 </script>
 
 ```
