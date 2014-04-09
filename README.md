@@ -38,6 +38,7 @@ BrightTag.Content.<BTFunction>
 ### <a name="iframe"></a>Iframe
 #### Description
 Creates an &lt;iframe&gt; element with the supplied uri.
+
 #### Examples
 ```sh
 <script type="text/javascript">
@@ -57,6 +58,7 @@ Creates an &lt;iframe&gt; element with the supplied uri.
 ### <a name="image"></a>Image
 #### Description
 Creates an &lt;img /&gt; element with the supplied uri.
+
 #### Examples
 ```sh
 <script type="text/javascript">
@@ -75,6 +77,7 @@ Creates an &lt;img /&gt; element with the supplied uri.
 ### <a name="script"></a>Script
 #### Description
 Creates an &lt;script&gt; element with the supplied uri.
+
 #### Examples
 ```sh
 <script type="text/javascript">
@@ -113,7 +116,15 @@ BrightTag.Util.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
+  var obj = {SKU: 1234},
+    newObj = {};
+
+  BrightTag.each(array, function(property) {
+    newObj[property.key] = property.value
+  })
 </script>
+
+// SKU=1234
 ```
 
 
@@ -129,6 +140,7 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="filter"></a>Filter
 #### Description
+BrightTag.Util.filter creates a new array with all elements that pass the test implemented by the provided function.
 
 #### Examples
 ```sh
@@ -139,6 +151,7 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="map"></a>Map
 #### Description
+BrightTag.Util.map method creates a new array with the results of calling a provided function on every element in this array.
 
 #### Examples
 ```sh
@@ -174,7 +187,7 @@ BrightTag.trim removes whitespace from both sides of a string, as well as, line 
 
 ### <a name="types"></a>BrightTag.Types
 #### Description
-The Types function returns a Boolean value that indicates whether a specified variable is any of the following:
+The BrightTag.Types function returns a Boolean value that indicates whether a specified variable is any of the following:
 
   - isArray
   - isBoolean
