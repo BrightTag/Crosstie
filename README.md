@@ -1,11 +1,11 @@
 BrightTag Crosstie
 ==================
 
-The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, &lt;iframe&gt;, and &lt;link&gt; uniform while utilizing the best practices when integrating tags within the BrightTag tag management system. 
+The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, and &lt;iframe&gt; tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
 The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, and extend.
 
-Also, included as part of the Crosstie library are the [BrightTag.Types](#types) and [BrightTag.trim](#trim) functions.
+Also, included as part of the Crosstie library are the [BrightTag.HTTP](#http), [BrightTag.Types](#types) and [BrightTag.trim](#trim) functions.
 
 Content Functions
 -----------------
@@ -13,10 +13,161 @@ Content Functions
 BrightTag.Content.<BTFunction>
 ```
 
-  - [HTTP](#http)
   - [Iframe](#iframe)
   - [Image](#image)
   - [Script](#script)
+
+### <a name="iframe"></a>Iframe
+#### Description
+`BrightTag.Content.iframe` creates an &lt;iframe&gt; element with the supplied uri.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  BrightTag.Content.iframe(
+    BrightTag.HTTP.URL("//frame.vendy-corp.com/path/")
+      .appendParams({
+        clientId: 'abcd',
+        tagId: '1234',
+        other: ''
+      }), {display: 'none'});
+</script>
+
+// <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&amp;tagId=1234" style="display: none;"></iframe>
+```
+
+### <a name="image"></a>Image
+#### Description
+`BrightTag.Content.image` creates an &lt;img /&gt; element with the supplied uri.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  BrightTag.Content.image(
+    BrightTag.HTTP.URL("//pixel.vendy-corp.com/path/")
+      .appendParams({
+        clientId: 'abcd',
+        pixelId: '1234'
+      }));
+</script>
+
+// <img height="1px" width="1px" src="http://pixel.vendy-corp.com/path/?clientId=abcd&pixelId=1234">
+```
+
+### <a name="script"></a>Script
+#### Description
+`BrightTag.Content.script` creates an &lt;script&gt; element with the supplied uri.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  BrightTag.Content.script("//script.vendy-corp.com/path/?clientId=abcd");
+</script>
+
+// <script type="text/javascript" src="//script.vendy-corp.com/path/?clientId=abcd"></script>
+```
+
+Utility Functions
+-----------------
+```sh
+BrightTag.Util.<BTFunction>
+```
+
+  - [Contains](#contains)
+  - [Each](#each)
+  - [Extend](#extend)
+  - [Filter](#filter)
+  - [Map](#map)
+
+### <a name="contains"></a>Contains
+#### Description
+`BrightTag.Util.contains` returns a Boolean value if a matching string is within another array.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  var x = ["a", "b", "c"];
+
+  BrightTag.Util.contains(x, 'a')
+</script>
+
+// true
+```
+
+### <a name="each"></a>Each
+#### Description
+`BrightTag.Util.each` performs a provided function once for every array element.
+
+#### Examples
+```sh
+<script type="text/javascript">
+var items = ["item1", "item2"],
+   skus = [1234, 2345],
+   array = [];
+
+ BrightTag.each(items, function(property) {
+   array.push(skus[property]);
+ })
+</script>
+
+//
+```
+
+### <a name="extend"></a>Extend
+#### Description
+`BrightTag.Util.extend` merges the contents of two or more objects into the first object.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  var object1 = {
+    dog: 0,
+    pony: { weight: 52, height: 100 },
+    cat: 97
+  },
+  object2 = {
+    pony: { height: 200 },
+    zebra: 100
+  };
+
+  BrightTag.extend(object1, object2);
+</script>
+
+// {dog: 0, pony: {"height":200}, cat: 97, zebra: 100
+```
+
+### <a name="filter"></a>Filter
+#### Description
+`BrightTag.Util.filter` creates a new array with all elements that pass the test implemented by the provided function.
+
+#### Examples
+```sh
+<script type="text/javascript">
+</script>
+```
+
+### <a name="map"></a>Map
+#### Description
+`BrightTag.Util.map` method creates a new array with the results of calling a provided function on every element in this array.
+
+#### Examples
+```sh
+<script type="text/javascript">
+  var category = BrightTag.Util.map("products, supplies, resources".split(/\s*,\s*/), 
+    function (value) {
+      return '"' + value + '"';
+    }).join();
+</script>
+
+// "products","supplies","resources"
+```
+
+Other Functions
+---------------
+
+  - [HTTP](#http)
+  - [trim](#trim)
+  - [Types](#types)
 
 ### <a name="http"></a>HTTP
 #### Description
@@ -34,147 +185,9 @@ BrightTag.Content.<BTFunction>
 </script>
 ```
 
-
-### <a name="iframe"></a>Iframe
-#### Description
-Creates an &lt;iframe&gt; element with the supplied uri.
-
-#### Examples
-```sh
-<script type="text/javascript">
-  BrightTag.Content.iframe(
-    BrightTag.HTTP.URL("//frame.vendy-corp.com/path/")
-      .appendParams({
-        clientId: 'abcd',
-        tagId: '1234',
-        other: ''
-      }), {display: 'none'});
-</script>
-
-// <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&amp;tagId=1234" style="display: none;"></iframe>
-```
-
-
-### <a name="image"></a>Image
-#### Description
-Creates an &lt;img /&gt; element with the supplied uri.
-
-#### Examples
-```sh
-<script type="text/javascript">
-  BrightTag.Content.image(
-    BrightTag.HTTP.URL("//pixel.vendy-corp.com/path/")
-      .appendParams({
-        clientId: 'abcd',
-        pixelId: '1234'
-      }));
-</script>
-
-// <img height="1px" width="1px" src="http://pixel.vendy-corp.com/path/?clientId=abcd&pixelId=1234">
-```
-
-
-### <a name="script"></a>Script
-#### Description
-Creates an &lt;script&gt; element with the supplied uri.
-
-#### Examples
-```sh
-<script type="text/javascript">
-  BrightTag.Content.script("//script.vendy-corp.com/path/?clientId=abcd");
-</script>
-
-// <script type="text/javascript" src="//script.vendy-corp.com/path/?clientId=abcd"></script>
-```
-
-
-Utility Functions
------------------
-```sh
-BrightTag.Util.<BTFunction>
-```
-
-  - [Contains](#contains)
-  - [Each](#each)
-  - [Extend](#extend)
-  - [Filter](#filter)
-  - [Map](#map)
-
-### <a name="contains"></a>Contains
-#### Description
-
-#### Examples
-```sh
-<script type="text/javascript">
-</script>
-```
-
-
-### <a name="each"></a>Each
-#### Description
-
-#### Examples
-```sh
-<script type="text/javascript">
-  var obj = {SKU: 1234},
-    newObj = {};
-
-  BrightTag.each(array, function(property) {
-    newObj[property.key] = property.value
-  })
-</script>
-
-// SKU=1234
-```
-
-
-### <a name="extend"></a>Extend
-#### Description
-
-#### Examples
-```sh
-<script type="text/javascript">
-</script>
-```
-
-
-### <a name="filter"></a>Filter
-#### Description
-BrightTag.Util.filter creates a new array with all elements that pass the test implemented by the provided function.
-
-#### Examples
-```sh
-<script type="text/javascript">
-</script>
-```
-
-
-### <a name="map"></a>Map
-#### Description
-BrightTag.Util.map method creates a new array with the results of calling a provided function on every element in this array.
-
-#### Examples
-```sh
-<script type="text/javascript">
-  var category = BrightTag.Util.map("products, supplies, resources".split(/\s*,\s*/), 
-    function (value) {
-      return '"' + value + '"';
-    }).join();
-</script>
-
-// "products","supplies","resources"
-```
-
-
-Other Functions
----------------
-
-  - [trim](#trim)
-  - [Types](#types)
-
 ### <a name="trim"></a>BrightTag.trim
 #### Description
-BrightTag.trim removes whitespace from both sides of a string, as well as, line breaks.
+`BrightTag.trim` removes whitespace from both sides of a string, as well as, line breaks.
 
 #### Examples
 ```sh
@@ -187,7 +200,7 @@ BrightTag.trim removes whitespace from both sides of a string, as well as, line 
 
 ### <a name="types"></a>BrightTag.Types
 #### Description
-The BrightTag.Types function returns a Boolean value that indicates whether a specified variable is any of the following:
+`BrightTag.Types` function returns a Boolean value that indicates whether a specified variable is any of the following:
 
   - isArray
   - isBoolean
