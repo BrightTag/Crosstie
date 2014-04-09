@@ -1,7 +1,7 @@
 BrightTag Crosstie
 ==================
 
-The Crosstie [Content](#content-functions) functions are designed to help make delivering content like &lt;script&gt;, &lt;img /&gt;, and &lt;iframe&gt; tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
+The Crosstie [Content](#content-functions) functions are designed to help make delivering content like `<script>`, `<img/>`, and `<iframe>` tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
 The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, and extend.
 
@@ -101,16 +101,16 @@ BrightTag.Util.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
-var items = ["item1", "item2"],
-   skus = [1234, 2345],
-   array = [];
+  var items = ["one", "two", "three"];
 
- BrightTag.each(items, function(property) {
-   array.push(skus[property]);
- })
+  BrightTag.Util.each(items, function(x) { 
+    console.log(x); 
+  })
 </script>
 
-//
+// one
+// two
+// three
 ```
 
 ### <a name="extend"></a>Extend
@@ -130,7 +130,7 @@ var items = ["item1", "item2"],
     zebra: 100
   };
 
-  BrightTag.extend(object1, object2);
+  BrightTag.Util.extend(object1, object2);
 </script>
 
 // {dog: 0, pony: {"height":200}, cat: 97, zebra: 100
