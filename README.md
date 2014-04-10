@@ -16,9 +16,9 @@ Content Functions
 BrightTag.Content.<BTFunction>
 ```
 
-  - [Iframe](#iframe)
-  - [Image](#image)
-  - [Script](#script)
+  - [iframe](#iframe)
+  - [image](#image)
+  - [script](#script)
 
 ### <a name="iframe"></a>iframe
 #### Description
@@ -40,7 +40,7 @@ BrightTag.Content.<BTFunction>
       }), {display: 'none'});
 </script>
 
-// <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&amp;tagId=1234" style="display: none;"></iframe>
+// <iframe height="1px" scrolling="no" width="1px" src="//frame.vendy-corp.com/path/?clientId=abcd&tagId=1234" style="display: none;"></iframe>
 ```
 
 ### <a name="image"></a>image
