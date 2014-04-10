@@ -194,9 +194,9 @@ BrightTag.Util.<BTFunction>
 `BrightTag.Util.map(source, callback, [thisObject])` method creates a new array with the results of calling a provided function on every element in this array.
 
 #### Arguments
-- source - an Array
-- callback - the callback that determines the result
-- thisObject - an optional context to use as this in the callback
+  - source - an Array
+  - callback - the callback that determines the result
+  - thisObject - an optional context to use as this in the callback
 
 #### Examples
 ```sh
@@ -212,7 +212,10 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="trim"></a>trim
 #### Description
-`BrightTag.trim()` removes whitespace from both sides of a string, as well as, line breaks.
+`BrightTag.trim(str)` removes whitespace from both sides of a string, as well as, line breaks.
+
+#### Arguments
+  - str - the string in which you want whitespace removed from
 
 #### Examples
 ```sh
@@ -229,9 +232,12 @@ Other Functions
   - [HTTP](#http)
   - [Types](#types)
 
-### <a name="http"></a>HTTP
+### <a name="http"></a>HTTP.URL
 #### Description
-`BrightTag.HTTP.URL()` and `BrightTag.HTTP.Cookie` allow you to easily create URLS and Cookies that use the appropriate protocol and load conventions.
+`BrightTag.HTTP.URL()`
+
+#### Arguments
+  - 
 
 #### Examples
 ```sh
@@ -240,15 +246,29 @@ Other Functions
 </script>
 ```
 
+### <a name="http"></a>HTTP.Cookie
+#### Description
+`BrightTag.HTTP.Cookie(document)` allows you to get, set, remove, clear and findEach cookie set to the document.
+
+#### Arguments
+  - document - the document object model (DOM)
+
+#### Examples
+
 ```sh
 <script type="text/javascript">
-  BrightTag.HTTP.Cookie({cookie: 'customCookieValue'});
+  var c = BrightTag.HTTP.Cookie(document);
+  
+  c.set('username', 'John Doe')
+  c.get('username')
 </script>
+
+// "John Doe"
 ```
 
 ### <a name="types"></a>BrightTag.Types
 #### Description
-`BrightTag.Types.<isType>()` function returns a Boolean value that indicates whether a specified variable is any of the following:
+`BrightTag.Types.<isType>(thing)` function returns a Boolean value that indicates whether a specified variable is any of the following:
 
   - isArray
   - isBoolean
@@ -257,6 +277,9 @@ Other Functions
   - isObject
   - isPrototypeOf
   - isString
+
+#### Arguments
+  - thing - value that you are checking to see is an Array, Object, Number, Boolean, etc.
 
 #### Examples
 ```sh
