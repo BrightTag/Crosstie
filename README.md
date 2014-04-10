@@ -1,6 +1,6 @@
 BrightTag Crosstie
 ==================
-Crosstie is a Javascript API that leverages helper functions found in BrightTag's tag.js file. These functions are designed to make for an easy self-service and uniform format for integrating client-side tags into the BrightTag platform.
+Crosstie is a Javascript SDK that leverages helper functions found in BrightTag's tag.js file. These functions are designed to make for an easy self-service and uniform format for integrating client-side tags into the BrightTag platform.
 
 The Crosstie [Content](#content-functions) functions are designed to help make delivering content like `<script>`, `<img/>`, and `<iframe>` tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
