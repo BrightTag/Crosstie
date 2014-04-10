@@ -234,16 +234,24 @@ Other Functions
 
 ### <a name="http"></a>HTTP.URL
 #### Description
-`BrightTag.HTTP.URL()`
+`BrightTag.HTTP.URL(url)` makes it easy to append defined parameters in the query string with .appendParam(s) and .appendPartialQueryString among other things.
 
 #### Arguments
-  - 
+  - url - the source of the script you want to load or request you are making.
 
 #### Examples
 ```sh
 <script type="text/javascript">
-  BrightTag.HTTP.URL("//frame.vendy-corp.com/path/");
+  var url = BrightTag.HTTP.URL("//frame.vendy-corp.com/path/")
+              .appendParams({
+                clientId: 'abcd',
+                pixelId: '' // not defined
+            });
+            
+  BrightTag.Content.image(url);
 </script>
+
+// http://frame.vendy-corp.com/path/?clientId=abcd
 ```
 
 ### <a name="http"></a>HTTP.Cookie
