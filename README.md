@@ -234,7 +234,7 @@ Other Functions
 
 ### <a name="http"></a>HTTP.URL
 #### Description
-`BrightTag.HTTP.URL(url)` makes it easy to append defined parameters in the query string with .appendParam(s) and .appendPartialQueryString among other things.
+`BrightTag.HTTP.URL(url)` makes it easy to append defined parameters in the query string with .appendParam(s) and .appendPartialQueryString.
 
 #### Arguments
   - url - the source of the script you want to load or request you are making.
