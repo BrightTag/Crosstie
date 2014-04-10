@@ -85,8 +85,10 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="contains"></a>contains
 #### Description
-`BrightTag.Util.contains` returns a Boolean value if a matching string is within another array.
-
+`BrightTag.Util.contains(source, expected)` returns a Boolean value if a matching string is within another array.
+#### Arguments
+  - source - an array
+  - expected - an object of any type
 #### Examples
 ```sh
 <script type="text/javascript">
@@ -207,7 +209,7 @@ Other Functions
 
 ```sh
 <script type="text/javascript">
-  BrightTag.HTTP.Cookie("//frame.vendy-corp.com/path/");
+  BrightTag.HTTP.Cookie({cookie: 'customCookieValue'});
 </script>
 ```
 
