@@ -247,3 +247,35 @@ BrightTag.Content.image(new BrightTag.HTTP.URL('//dataendpoint.com/push_sync/1x1
 </script>
 
 ```
+
+Multi-Item Tag
+```sh
+<script type="text/javascript">
+  (function () {
+    BrightTag.Content.script(
+      BrightTag.HTTP.URL('//javascript.js')
+    )
+
+    var obj = {
+      "orderId": {{orderId}},
+      "email": {{email}},
+      "tax": {{tax}},
+      "shipping": {{shipping}},
+      "city": {{city}},
+      "state": {{state}},
+      "zip": {{zip}},
+      "items": []
+    };
+
+    BrightTag.Util.each({{items}}, function(item) {
+      var basket = {};
+      BrightTag.Util.each({{customData}}, function(prop) {
+        basket[prop.key] = item[prop.value];
+      });
+      obj["items"].push(basket);
+    });
+
+    callBackFunctionHere(obj);
+  })();
+</script>
+```
