@@ -22,7 +22,11 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="iframe"></a>iframe
 #### Description
-`BrightTag.Content.iframe()` creates an &lt;iframe&gt; element with the supplied uri.
+`BrightTag.Content.iframe(uri, options)` creates an &lt;iframe&gt; element with the supplied uri.
+
+#### Arguments
+  - uri - a String or BrightTag.HTTP.URL
+  - options - an optional Object; defaults are {width: '1px', height: '1px', frameborder: '0', scrolling: 'no'}; supports 'display'.
 
 #### Examples
 ```sh
@@ -41,7 +45,11 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="image"></a>image
 #### Description
-`BrightTag.Content.image()` creates an &lt;img /&gt; element with the supplied uri.
+`BrightTag.Content.image(uri, options)` creates an &lt;img /&gt; element with the supplied uri.
+
+#### Arguments
+  - uri - a String or BrightTag.HTTP.URL
+  - options - an optional Object; defaults are {width: '1px', height: '1px'}; supports 'display'.
 
 #### Examples
 ```sh
@@ -59,7 +67,11 @@ BrightTag.Content.<BTFunction>
 
 ### <a name="script"></a>script
 #### Description
-`BrightTag.Content.script()` creates an &lt;script&gt; element with the supplied uri.
+`BrightTag.Content.script(uri, options)` creates an &lt;script&gt; element with the supplied uri.
+
+#### Arguments
+  - uri - a String or BrightTag.HTTP.URL
+  - options - an optional Object; defaults are {type: 'text/javascript'}; supports 'async', 'id'
 
 #### Examples
 ```sh
@@ -86,9 +98,11 @@ BrightTag.Util.<BTFunction>
 ### <a name="contains"></a>contains
 #### Description
 `BrightTag.Util.contains(source, expected)` returns a Boolean value if a matching string is within another array.
+
 #### Arguments
-  - source - an array
-  - expected - an object of any type
+  - source - an Array
+  - expected - an Object of any type
+
 #### Examples
 ```sh
 <script type="text/javascript">
@@ -102,7 +116,12 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="each"></a>each
 #### Description
-`BrightTag.Util.each` performs a provided function once for every array element.
+`BrightTag.Util.each(object, callback, [thisObject])` performs a provided function once for every array element.
+
+#### Arguments
+  - object - an Object or Array
+  - callback - the function to execute for each item or key-value pair
+  - thisObject - an optional context to use as this in the callback
 
 #### Examples
 ```sh
@@ -121,7 +140,11 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="extend"></a>extend
 #### Description
-`BrightTag.Util.extend` merges the contents of two or more objects into the first object.
+`BrightTag.Util.extend(sink, source)` merges the contents of two or more objects into the first object.
+
+#### Arguments
+  - sink - an Object
+  - source - an Object
 
 #### Examples
 ```sh
@@ -144,7 +167,12 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="filter"></a>filter
 #### Description
-`BrightTag.Util.filter` creates a new array with all elements that pass the test implemented by the provided function.
+`BrightTag.Util.filter(source, callback, [thisObject])` creates a new array with all elements that pass the test implemented by the provided function.
+
+#### Arguments
+  - source - an Array
+  - callback - the (optional) callback that determines the truthiness
+  - thisObject - an optional context to use as this in the callback
 
 #### Examples
 ```sh
@@ -163,7 +191,12 @@ BrightTag.Util.<BTFunction>
 
 ### <a name="map"></a>map
 #### Description
-`BrightTag.Util.map` method creates a new array with the results of calling a provided function on every element in this array.
+`BrightTag.Util.map(source, callback, [thisObject])` method creates a new array with the results of calling a provided function on every element in this array.
+
+#### Arguments
+- source - an Array
+- callback - the callback that determines the result
+- thisObject - an optional context to use as this in the callback
 
 #### Examples
 ```sh
