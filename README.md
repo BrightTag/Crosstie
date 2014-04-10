@@ -311,7 +311,6 @@ BrightTag.Content.image(new BrightTag.HTTP.URL('//dataendpoint.com/push_sync/1x1
 		pixelId: '1234'
 	}));
 </script>
-
 ```
 
 Multi-Item Tag
