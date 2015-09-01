@@ -4,7 +4,7 @@ Crosstie is a Javascript SDK that leverages helper functions found in BrightTag'
 
 The Crosstie [Content](#content-functions) functions are designed to help make delivering content like `<script>`, `<img/>`, and `<iframe>` tags uniformly while utilizing the best practices when integrating tags within the BrightTag tag management system. 
 
-The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, trim, and extend.
+The [Utility](#utility-functions) functions are optimized Javascript functions intended for commonly encountered requirements such as each, filter, map, contains, trim, and extend. The Utility functions are defined in ~/dev/brighttag/bt/js/src/util.js
 
 Also, included as part of the Crosstie library are the [BrightTag.HTTP](#http) and [BrightTag.Types](#types)functions.
 
