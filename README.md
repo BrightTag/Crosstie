@@ -201,13 +201,12 @@ BrightTag.Util.<BTFunction>
 #### Examples
 ```sh
 <script type="text/javascript">
-  var category = BrightTag.Util.map("products, supplies, resources".split(/\s*,\s*/), 
-    function (value) {
-      return '"' + value + '"';
-    }).join();
+    var kvp = BrightTag.Util.map([{"key":"key1","value":"value1"},{"key":"key2","value":"value2"}], function(param){
+      return param.key + "%3D" + param.value;
+    }).join('%3B');
 </script>
 
-// "products","supplies","resources"
+// "key1%3Dvalue1%3Bkey2%3Dvalue2"
 ```
 
 ### <a name="trim"></a>trim
